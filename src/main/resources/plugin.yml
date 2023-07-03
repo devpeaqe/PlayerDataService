@@ -1,0 +1,8 @@
+name: PlayerDataService
+version: '${project.version}'
+main: de.peaqe.playerdataservice.PlayerDataService
+api-version: '1.18'
+
+commands:
+  data:
+    description: "Userdata command"

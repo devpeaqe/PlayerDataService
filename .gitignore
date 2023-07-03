@@ -1,0 +1,4 @@
+# Project exclude paths
+/CoinAPI/target/
+/SimpleCoins/target/
+/target/

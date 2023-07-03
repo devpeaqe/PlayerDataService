@@ -1,0 +1,17 @@
+name: SimpleCoins
+version: '${project.version}'
+main: de.peaqe.simplecoins.SimpleCoins
+api-version: '1.18'
+
+depend:
+  - CoinAPI
+
+commands:
+
+  coins:
+    description: "Schaue dir deine Coins an!"
+
+  coinmanager:
+    aliases:
+      - coinsmanager
+      - managecoins

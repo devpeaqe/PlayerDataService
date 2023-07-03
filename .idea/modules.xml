@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CoinAPI/CoinAPI.iml" filepath="$PROJECT_DIR$/CoinAPI/CoinAPI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PlayerDataService.iml" filepath="$PROJECT_DIR$/PlayerDataService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SimpleCoins/SimpleCoins.iml" filepath="$PROJECT_DIR$/SimpleCoins/SimpleCoins.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,4 @@
+name: CoinAPI
+version: '${project.version}'
+main: de.peaqe.coinapi.CoinAPI
+api-version: '1.18'

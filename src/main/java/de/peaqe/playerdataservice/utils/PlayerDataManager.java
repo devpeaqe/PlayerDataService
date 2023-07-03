@@ -10,10 +10,12 @@ package de.peaqe.playerdataservice.utils;
  *
  */
 
+import com.google.gson.Gson;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
 import org.bson.Document;
 import org.bukkit.entity.Player;
 
@@ -22,6 +24,8 @@ import java.util.UUID;
 public class PlayerDataManager {
     private final MongoClient mongoClient;
     private final MongoCollection<Document> collection;
+    private final MongoCollection<Document> mongoService;
+    private final Gson gson = new Gson();
 
     public PlayerDataManager() {
 
@@ -31,6 +35,9 @@ public class PlayerDataManager {
         mongoClient = new MongoClient(new MongoClientURI(databaseUrl));
         MongoDatabase database = mongoClient.getDatabase(databaseName);
         collection = database.getCollection("playerData");
+
+        this.mongoService = database.getCollection("playerData");
+
     }
 
     public void savePlayerData(Player player) {
@@ -50,17 +57,9 @@ public class PlayerDataManager {
 
     }
 
-    public PlayerData getPlayerData(UUID uuid) {
-        Document document = collection.find(new Document("uuid", uuid.toString())).first();
-
-        if (document != null) {
-            String name = document.getString("name");
-            String ipAddress = document.getString("ipAddress");
-
-            return new PlayerData(uuid, name, ipAddress);
-        }
-
-        return null;
+    public PlayerData getPlayerData(UUID uniqueId) {
+        Document document = mongoService.find(Filters.eq("uniqueId", uniqueId)).first();
+        return gson.fromJson(gson.toJson(document), PlayerData.class);
     }
 
     public void closeConnection() {

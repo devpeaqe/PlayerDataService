@@ -11,7 +11,6 @@ package de.peaqe.playerdataservice.listener;
  */
 
 import de.peaqe.playerdataservice.PlayerDataService;
-import de.peaqe.playerdataservice.utils.PlayerData;
 import de.peaqe.playerdataservice.utils.PlayerDataManager;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

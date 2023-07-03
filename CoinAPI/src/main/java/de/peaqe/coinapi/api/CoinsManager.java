@@ -10,7 +10,6 @@ package de.peaqe.coinapi.api;
  *
  */
 
-import com.google.common.io.CountingOutputStream;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoCollection;
